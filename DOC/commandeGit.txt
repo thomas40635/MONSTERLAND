@@ -1,11 +1,8 @@
+//Crée un git local
+git init
+
 //Lier le git au projet
 git remote add origin https://github.com/thomas40635/MONSTERLAND.git
-
-//Envoyer ses commits vers le dépôt distant
-git push
-
-//Envoyer ses commits vers le dépôt distant sur une branch spécifique
-git push origin master
 
 //Mettre à jour le dépôt local
 git pull
@@ -13,4 +10,19 @@ git pull
 //Mettre à jour le dépôt local d'une branch spécifique
 git pull origin master
 
-//
+//Commiter
+git add .
+git commit -m "message du commit"
+
+//Envoyer ses commits vers le dépôt distant
+git push
+
+//Envoyer ses commits vers le dépôt distant sur une branch spécifique
+git push origin master
+
+Ordre d'éxécution a la création:
+1. git init
+2. git remote add
+3. git pull
+4. git add
+5. git push
