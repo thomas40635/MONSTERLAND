@@ -1,0 +1,16 @@
+//Lier le git au projet
+git remote add origin https://github.com/thomas40635/MONSTERLAND.git
+
+//Envoyer ses commits vers le dépôt distant
+git push
+
+//Envoyer ses commits vers le dépôt distant sur une branch spécifique
+git push origin master
+
+//Mettre à jour le dépôt local
+git pull
+
+//Mettre à jour le dépôt local d'une branch spécifique
+git pull origin master
+
+//
