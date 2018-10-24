@@ -1,4 +1,4 @@
-package RPG;
+package rpg;
 
 abstract class Monstre extends Personnage {
 

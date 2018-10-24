@@ -1,4 +1,4 @@
-package RPG;
+package rpg;
 
 public class Epee extends Physique{
     private static final int DEGAT_DFL = 30;
