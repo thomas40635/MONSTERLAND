@@ -3,22 +3,25 @@ package rpg;
 abstract class Personnage {
 	private int vie;
 	private int force;
+	private boolean enVie = true;
+	private int niveau;
 
-	public Personnage(int vie, int force) {
+	public Personnage(int vie, int force, int niveau) {
 		this.vie = vie;
 		this.force = force;
+		this.niveau = niveau;
 	}
 
-	public void recevoirDegats(int degat){
-		System.out.println(this.getClass().getSimpleName()+" reçoit "+degat+" degats.");
-		this.vie -= degat;
-		if(this.vie <= 0){
-			System.out.println(this.getClass().getSimpleName()+" est mort !");
-			this.vie = 0;
-		}
-		else{
-			System.out.println(this.getClass().getSimpleName()+" lui reste "+this.vie+" points de vie.");
-		}
+	public void recevoirDegats(Personnage attaquant, int degat){
+        this.vie -= degat;
+        System.out.println(this.getClass().getSimpleName() + " reçoit " + degat + " degats.");
+
+        if (this.vie <= 0) {
+            this.mourir(attaquant);
+            this.vie = 0;
+        } else {
+            System.out.println(this.getClass().getSimpleName() + " lui reste " + this.vie + " points de vie.");
+        }
 	}
 
 	public int getVie() {
@@ -29,20 +32,21 @@ abstract class Personnage {
 		return force;
 	}
 
-	@Override
-	public String toString() {
-		return "Personnage{" +
-				"vie=" + vie +
-				", force=" + force +
-				'}';
-	}
+    public boolean isEnVie() {
+        return enVie;
+    }
 
-	public boolean isDead(){
-		if(this.vie <= 0){
-			return true;
-		}
-		else{
-			return false;
-		}
+    @Override
+    public String toString() {
+        return "Personnage{" +
+                "vie=" + vie +
+                ", force=" + force +
+                ", enVie=" + enVie +
+                '}';
+    }
+
+    public void mourir(Personnage attaquant){
+        System.out.println(this.getClass().getSimpleName()+" est mort !");
+        this.enVie = false;
 	}
 }

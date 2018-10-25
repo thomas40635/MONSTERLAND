@@ -1,10 +1,10 @@
 package rpg;
 
 public class Epee extends Physique{
-	private static final int DEGAT_DFL = 30;
-	private static final int durabilite_DFL = 100;
+	private static final int DEGAT_DFL = 4;
+	private static final int DURABILITE_DFL = 8;
 
 	public Epee() {
-		super(DEGAT_DFL, durabilite_DFL);
+		super(DEGAT_DFL, DURABILITE_DFL);
 	}
 }
