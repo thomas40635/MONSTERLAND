@@ -1,21 +1,21 @@
 package rpg;
 
 abstract class Arme{
-    private int degat;
-    private int critique;
-    private int echec;
+	private int degat;
 
-    public Arme(int degat) {
-        this.degat = degat;
-    }
+	public Arme(int degat) {
+		this.degat = degat;
+	}
 
-    public int getDegat() { return degat; }
+	public Arme() {
+	}
 
-    public int getCritique() {
-        return critique;
-    }
+	public int getDegat() {
+		return degat;
+	}
 
-    public int getEchec() {
-        return echec;
-    }
+	public void setDegat(int degat) {
+		this.degat = degat;
+	}
+
 }
