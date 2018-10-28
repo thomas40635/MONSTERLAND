@@ -3,6 +3,7 @@ package rpg;
 abstract class Physique extends Arme{
 
 	private int durabilite;
+	private boolean utilisable = true;
 
     public Physique(int degat, int durabilite) {
         super(degat);
@@ -13,7 +14,12 @@ abstract class Physique extends Arme{
 	//Fonction qui enleve de la durabilité à l'arme
 
 	public void user(){
-		this.durabilite -= 1;
+    	if(this.durabilite >= 0) {
+			this.durabilite -= 1;
+		}
+		else{
+			this.utilisable = false;
+		}
 	}
 
 	/**
@@ -30,5 +36,7 @@ abstract class Physique extends Arme{
 		this.durabilite = durabilite;
 	}
 
-
+	public boolean isUtilisable() {
+		return utilisable;
+	}
 }

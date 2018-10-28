@@ -7,7 +7,7 @@ public class Dragon extends Neutre {
     private static final int GAINEXP_DFL = 5;
 
     public Dragon() {
-        super(VIE_DFL, FORCE_DFL, NIVEAU_DFL, GAINEXP_DFL);
+        super(VIE_DFL, FORCE_DFL, GAINEXP_DFL);
     }
 
     public static int getVieDfl() {

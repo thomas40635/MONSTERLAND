@@ -1,5 +1,7 @@
 package rpg;
 
+import java.util.Objects;
+
 abstract class Arme{
 	private int degat;
 
@@ -7,7 +9,17 @@ abstract class Arme{
 		this.degat = degat;
 	}
 
-	public Arme() {
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Arme arme = (Arme) o;
+		return degat == arme.degat;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(degat);
 	}
 
 	public int getDegat() {

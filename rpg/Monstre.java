@@ -4,8 +4,8 @@ abstract class Monstre extends Personnage {
 
     private int gainExp;
 
-    public Monstre(int vie, int force, int niveau, int gainExp) {
-        super(vie, force, niveau);
+    public Monstre(int vie, int force, int gainExp) {
+        super(vie, force);
         this.gainExp = gainExp;
     }
 

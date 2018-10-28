@@ -4,12 +4,10 @@ abstract class Personnage {
 	private int vie;
 	private int force;
 	private boolean enVie = true;
-	private int niveau;
 
-	public Personnage(int vie, int force, int niveau) {
+	public Personnage(int vie, int force) {
 		this.vie = vie;
 		this.force = force;
-		this.niveau = niveau;
 	}
 
 	public void recevoirDegats(Personnage attaquant, int degat){
@@ -24,34 +22,32 @@ abstract class Personnage {
         }
 	}
 
-	public int getVie() {
-		return vie;
-	}
+    public void mourir(Personnage attaquant){
+        System.out.println(this.getClass().getSimpleName()+" est mort !");
+        this.setEnVie(false);
+    }
 
-	public int getForce() {
-		return force;
-	}
+    public int getVie() {
+        return vie;
+    }
 
-
-    public void setForce(int force) {
-        this.force = force;
+    public int getForce() {
+        return force;
     }
 
     public boolean isEnVie() {
         return enVie;
     }
 
-    @Override
-    public String toString() {
-        return "Personnage{" +
-                "vie=" + vie +
-                ", force=" + force +
-                ", enVie=" + enVie +
-                '}';
+    public void setVie(int vie) {
+        this.vie = vie;
     }
 
-    public void mourir(Personnage attaquant){
-        System.out.println(this.getClass().getSimpleName()+" est mort !");
-        this.enVie = false;
-	}
+    public void setForce(int force) {
+        this.force = force;
+    }
+
+    public void setEnVie(boolean enVie) {
+        this.enVie = enVie;
+    }
 }
