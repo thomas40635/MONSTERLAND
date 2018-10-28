@@ -22,6 +22,18 @@ abstract class Personnage {
         }
 	}
 
+	public void recevoirDegats(Personnage attaquant, int degat, String typeDegat){
+        this.vie -= degat;
+        System.out.println(this.getClass().getSimpleName() + " reçoit " + degat + " degats.");
+
+        if (this.vie <= 0) {
+            this.mourir(attaquant);
+            this.vie = 0;
+        } else {
+            System.out.println(this.getClass().getSimpleName() + " lui reste " + this.vie + " points de vie.");
+        }
+	}
+
     public void mourir(Personnage attaquant){
         System.out.println(this.getClass().getSimpleName()+" est mort !");
         this.setEnVie(false);

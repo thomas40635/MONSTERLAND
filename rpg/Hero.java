@@ -28,30 +28,39 @@ public class Hero extends Personnage{
 	 * @param cible
 	 * @param arme
 	 */
-	public void attaquer(Personnage cible, Arme arme){
+	public void attaquer(Monstre cible, Arme arme){
+		int degat = arme.getDegat();
+		String typeDegat = "physique";
+		boolean attaqueReussie = false;
 		if(cible.isEnVie()) {
 			if (arme instanceof Physique){
 				if(this.attaquerPhysique((Physique) arme)) {
-					int degat = arme.getDegat();
+					attaqueReussie = true;
+					typeDegat = "physique";
 					((Physique) arme).user();
 				}
 				else{
-					System.out.println("Votre arme est cassée...");
+					System.out.println("Vous ne pouvez pas attaquer avec une arme cassée...");
 				}
 			}
 			else if (arme instanceof Magique){
-				if(this.attaquerPhysique((Physique) arme)) {
-					int degat = arme.getDegat();
-					((Physique) arme).user();
+				if(this.attaquerMagique((Magique) arme)) {
+					attaqueReussie = true;
+					typeDegat = "magique";
+					this.mana -= ((Magique) arme).getMana();
 				}
 				else{
-					System.out.println("Votre arme est cassée...");
+					System.out.println("Vous n'avez pas assez de mana...");
 				}
 			}
 
-			System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName() + " avec " + arme.getClass()           .getSimpleName() + ".");
-			cible.recevoirDegats(this,degat);
-
+			if(attaqueReussie) {
+				System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName() + " avec " + 				arme.getClass().getSimpleName() + ".");
+				cible.recevoirDegats(this, degat, typeDegat);
+				if(cible.isEnVie()) {
+					cible.attaquer(this);
+				}
+			}
 		}
 		else {
 			System.out.println(cible.getClass().getSimpleName()+" est déjà  mort.");
@@ -59,21 +68,11 @@ public class Hero extends Personnage{
 	}
 
 	public boolean attaquerPhysique(Physique arme){
-		if(!arme.isUtilisable()){
-
-		}
+		return arme.isUtilisable();
 	}
 
 	public boolean attaquerMagique(Magique arme){
-		if(this.mana >= arme.getMana()) {
-			arme.getMana();
-		}
-		else{
-			System.out.println();
-		}
-		if(!arme.isUtilisable()){
-
-		}
+		return this.mana >= arme.getMana();
 	}
 
 	/**
@@ -146,6 +145,10 @@ public class Hero extends Personnage{
 
 	public int getNiveau() {
 		return niveau;
+	}
+
+	public int getMana() {
+		return mana;
 	}
 
 	public int getExperience() {

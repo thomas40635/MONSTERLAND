@@ -5,12 +5,12 @@ public class Demo {
 
 		Hero hero = new Hero();
 		Dragon dragon = new Dragon();
-		Epee épée = new Epee();
+		Dragon dragon2 = new Dragon();
+		Dragon dragon3 = new Dragon();
+		BouleDeFeu sort = new BouleDeFeu();
 
-		System.out.println(hero);
-		hero.equiper(épée);
-		System.out.println(hero);
-		hero.desequiper(épée);
-		System.out.println(hero);
+		hero.equiper(sort);
+
+		hero.attaquer(dragon,sort);
 	}
 }

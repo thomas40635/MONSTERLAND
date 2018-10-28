@@ -10,6 +10,15 @@ public class Dragon extends Neutre {
         super(VIE_DFL, FORCE_DFL, GAINEXP_DFL);
     }
 
+    @Override
+    public void recevoirDegats(Personnage attaquant, int degat, String typeDegat) {
+        if(typeDegat == "magique"){
+            degat /= 2;
+            System.out.println("Votre sort n'est pas trés efficace contre les dragons..");
+        }
+        super.recevoirDegats(attaquant, degat, typeDegat);
+    }
+
     public static int getVieDfl() {
         return VIE_DFL;
     }
