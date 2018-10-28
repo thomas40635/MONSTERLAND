@@ -2,11 +2,14 @@ package rpg;
 
 abstract class Monstre extends Personnage {
 
-    public Monstre(int vie, int force, int niveau) {
+    private int gainExp;
+
+    public Monstre(int vie, int force, int niveau, int gainExp) {
         super(vie, force, niveau);
+        this.gainExp = gainExp;
     }
 
-    protected void attaquer(Personnage cible){
+    public void attaquer(Personnage cible){
         int degat = this.getForce();
         System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName()+".");
         cible.recevoirDegats(this, degat);
@@ -14,8 +17,12 @@ abstract class Monstre extends Personnage {
 
     // TODO : Effectuer les gains d'item, d'exp et d'or du héro à la mort du monstre
     @Override
-    public void mourir(Hero attaquant){
+    public void mourir(Personnage attaquant){
         super.mourir(attaquant);
-        attaquant.gagneExp(this.getGainExp());
+        if(attaquant instanceof Hero) {
+            ((Hero) attaquant).gagnerExp(this.gainExp);
+        }
     }
+
+
 }

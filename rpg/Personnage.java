@@ -32,6 +32,11 @@ abstract class Personnage {
 		return force;
 	}
 
+
+    public void setForce(int force) {
+        this.force = force;
+    }
+
     public boolean isEnVie() {
         return enVie;
     }

@@ -1,10 +1,10 @@
 package rpg;
 
 public class Demo {
-	public static void main(String args[]){
+	public static void main(String args[]) {
 
 		//Création du héro
-		Hero hero = new Hero(20, 2, 1);
+		Hero hero = new Hero();
 
 		//Création de l'épée de type arme
 		Epee épée = new Epee();
@@ -12,15 +12,12 @@ public class Demo {
 		//Le héro s'équipe de l'arme
 		hero.equiper(épée);
 
-		Dragon dragon = new Dragon();
+		Dragon dragon1 = new Dragon();
 
-		dragon.attaquer(hero);
-		dragon.attaquer(hero);
-		dragon.attaquer(hero);
-		dragon.attaquer(hero);
-		dragon.attaquer(hero);
-		dragon.attaquer(hero);
-		dragon.attaquer(hero);
+		System.out.println(hero.getVieMax());
 
+		hero.gagnerNiveau();
+
+		System.out.println(hero.getVieMax());
 	}
 }
