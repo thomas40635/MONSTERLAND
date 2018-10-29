@@ -119,6 +119,10 @@ public class Hero extends Personnage{
         this.setVie(this.getVie() + 2);
     }
 
+    public void parcourir(Lieu lieu){
+		lieu.parcourir(this);
+	}
+
     public int getNbArme() {
         return nbArme;
     }
