@@ -35,20 +35,10 @@ public class Lieu {
 	
 	public void afficherEtape(Lieu lieu){
 		
-		for(int i = 0; i < this.nbEtape_MAX; ++i){
-		System.out.println("Etape" + +i + " : " + lieu.getEtapes().get(i));
+		for(int i = 0; i < lieu.getEtapes().size(); ++i){
+		System.out.println("Etape" + +i + " : " + lieu.getEtapes().get(i).getClass().getSimpleName());
 		}
 	}
-//	public void desequiper(Arme arme){
-//		for(int i = 0; i < this.nbArme; ++i){
-//			if(this.armes[i].equals(arme)){
-//				this.armes[i] = this.armes[this.nbArme];
-//				this.nbArme -= 1;
-//				System.out.println("Vous vous deséquipez de " + arme.getClass().getSimpleName());
-//			}
-//		}
-//	}
-	
 
 	public String getNom() {
 		return nom;
@@ -67,8 +57,17 @@ public class Lieu {
 		this.etapes = etapes;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Lieu [nom=" + nom + ", levelMinRequis=" + levelMinRequis
+				+ ", nbEtape_MAX=" + nbEtape_MAX + ", etapes=" + etapes
+				+ ", getNom()=" + getNom() + ", getEtapes()=" + getEtapes()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
 
+	
+	
 
 
 
