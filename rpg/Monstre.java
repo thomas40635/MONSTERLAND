@@ -22,9 +22,9 @@ abstract class Monstre extends Personnage {
         if(attaquant instanceof Hero) {
             ((Hero) attaquant).gagnerExp(this.gainExp);
             // TODO : tous les monstres a leur mort ne donne pas tous les differents item
-            this.donnerEcaille(attaquant);
-            this.donnerViande(attaquant);
-            this.donnerOs(attaquant);
+            this.donnerEcaille((Hero) attaquant);
+            this.donnerViande((Hero) attaquant);
+            this.donnerOs((Hero) attaquant);
         }
     }
     
@@ -39,6 +39,10 @@ abstract class Monstre extends Personnage {
 
 	public void donnerEcaille(Personnage attaquant) {
 	}
+
+	public void debuter(Hero hero){
+        System.out.println("Vous tombez face à " + this.getClass().getSimpleName());
+    }
 
 
 }

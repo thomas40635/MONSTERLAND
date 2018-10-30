@@ -136,7 +136,6 @@ public class Hero extends Personnage{
     
     public void gagnerViande(int gainViande) {
 		this.viande += gainViande;
-		
 	}
 
     public void parcourir(Lieu lieu){
@@ -249,11 +248,17 @@ public class Hero extends Personnage{
 	@Override
 	public String toString() {
 		return "Hero{" +
-				"armes=" + Arrays.toString(armes) +
+				"vieMax=" + vieMax +
+				", mana=" + mana +
+				", niveau=" + niveau +
+				", nbArme=" + nbArme +
+				", armes=" + Arrays.toString(armes) +
+				", chance=" + chance +
+				", experience=" + experience +
+				", ecaille=" + ecaille +
+				", esprit=" + esprit +
+				", viande=" + viande +
+				", os=" + os +
 				'}';
 	}
-
-	
-
-	
 }

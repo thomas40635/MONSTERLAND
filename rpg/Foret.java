@@ -9,12 +9,12 @@ public class Foret extends Lieu{
     private int etapeActuelle = 0;
 
     public Foret() {
+        etapes.add(new Quête());
         etapes.add(new Dragon());
         etapes.add(new Marchand());
         etapes.add(new Dragon());
         etapes.add(new Dragon());
         etapes.add(new Druide());
-        etapes.add(new Quête());
         etapes.add(new Dragon());
     }
 
@@ -22,18 +22,19 @@ public class Foret extends Lieu{
     public void parcourir(Hero hero){
         etapeActuelle++;
         Object etape = this.getEtapes().get(etapeActuelle - 1);
-        if(etape instanceof Dragon) {
-            System.out.println("Vous tombez face à " + etape.getClass().getSimpleName());
+        if(etape instanceof Monstre) {
+            ((Monstre) etape).debuter(hero);
         }
         else if(etape instanceof Marchand){
-            System.out.println("Vous rencontrez un marchand");
+            ((Marchand) etape).debuter(hero);
         }
         else if(etape instanceof Druide){
-            System.out.println("Vous croisez un druide");
+            ((Druide) etape).debuter(hero);
         }
         else if(etape instanceof Quête){
-            System.out.println("Une quête s'offre à vous");
+            ((Quête) etape).debuter(hero);
         }
+
     }
 
     public ArrayList<Object> getEtapes() {

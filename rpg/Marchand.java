@@ -10,4 +10,8 @@ public class Marchand {
 
 	}
 
+	public void debuter(Hero hero){
+		System.out.println("Vous rencontrez un marchand");
+	}
+
 }

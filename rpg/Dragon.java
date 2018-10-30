@@ -22,9 +22,6 @@ public class Dragon extends Neutre implements Ecaille, Viande, Os{
         super.recevoirDegats(attaquant, degat, typeDegat);
     }
 
-
-    
-
 	@Override
 	public String toString() {
 		return "Dragon [getVie()=" + getVie() + ", getForce()=" + getForce()
@@ -41,13 +38,11 @@ public class Dragon extends Neutre implements Ecaille, Viande, Os{
 	@Override
 	public void donnerOs(Personnage attaquant) {
 		((Hero) attaquant).gagnerOs(this.gainOs);
-		
 	}
 
 	@Override
 	public void donnerViande(Personnage attaquant) {
 		((Hero) attaquant).gagnerViande(this.gainViande);
-		
 	}
     
     public static int getVieDfl() {
