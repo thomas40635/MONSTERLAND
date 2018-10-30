@@ -23,12 +23,16 @@ public class Quête {
             // Test de réussite
             if(test > chance){
                 System.out.println("Vous avez terminé la quête avec succés !");
+                hero.gagnerOr(4);
             }
             else if(test == chance){
                 System.out.println("Malgré quelques bobos, vous avez terminé la quête.");
+                hero.recevoirDegats(2);
+                hero.gagnerOr(2);
             }
             else{
                 System.out.println("La quête s'est mal déroulée... Votre héro a échoué...");
+                hero.recevoirDegats(4);
             }
         }
         else{

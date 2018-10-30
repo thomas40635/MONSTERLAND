@@ -10,12 +10,12 @@ abstract class Personnage {
 		this.force = force;
 	}
 
-	public void recevoirDegats(Personnage attaquant, int degat){
+	public void recevoirDegats(int degat){
         this.vie -= degat;
         System.out.println(this.getClass().getSimpleName() + " reçoit " + degat + " degats.");
 
         if (this.vie <= 0) {
-            this.mourir(attaquant);
+            this.mourir();
             this.vie = 0;
         } else {
             System.out.println(this.getClass().getSimpleName() + " lui reste " + this.vie + " points de vie.");
@@ -36,6 +36,12 @@ abstract class Personnage {
 
     public void mourir(Personnage attaquant){
         System.out.println(this.getClass().getSimpleName()+" est mort !");
+        this.setEnVie(false);
+    }
+
+    public void mourir(){
+        System.out.println("Votre héro est mort !");
+        System.out.println("___--- GAME OVER ---___");
         this.setEnVie(false);
     }
 

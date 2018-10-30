@@ -5,7 +5,7 @@ public class Druide {
 
 	}
 
-	public void debuter(Hero hero){
+	public void rencontrer(Hero hero){
 		System.out.println("Vous croisez un druide");
 	}
 }

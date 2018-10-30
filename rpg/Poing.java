@@ -1,8 +1,8 @@
 package rpg;
 
 public class Poing extends Physique{
-	private static final int DEGAT_DFL = 5;
-	private static int durabilite = 100;
+	private static final int DEGAT_DFL = 1;
+	private static int durabilite = 1000;
 
 	public Poing() {
 		super(DEGAT_DFL, durabilite);

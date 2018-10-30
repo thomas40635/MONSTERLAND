@@ -3,13 +3,13 @@ package rpg;
 import java.util.ArrayList;
 
 public class Foret extends Lieu{
-    private String nom = "Fôret mystérieuse";
+    private static final String NOM = "Fôret mystérieuse";
     private int niveauMinRequis = 1;
     private ArrayList<Object> etapes = new ArrayList<Object>();
     private int etapeActuelle = 0;
 
     public Foret() {
-        etapes.add(new Quête());
+        super(NOM);
         etapes.add(new Dragon());
         etapes.add(new Marchand());
         etapes.add(new Dragon());
@@ -23,13 +23,13 @@ public class Foret extends Lieu{
         etapeActuelle++;
         Object etape = this.getEtapes().get(etapeActuelle - 1);
         if(etape instanceof Monstre) {
-            ((Monstre) etape).debuter(hero);
+            ((Monstre) etape).combattre(hero);
         }
         else if(etape instanceof Marchand){
-            ((Marchand) etape).debuter(hero);
+            ((Marchand) etape).rencontrer(hero);
         }
         else if(etape instanceof Druide){
-            ((Druide) etape).debuter(hero);
+            ((Druide) etape).rencontrer(hero);
         }
         else if(etape instanceof Quête){
             ((Quête) etape).debuter(hero);

@@ -1,5 +1,7 @@
 package rpg;
 
+import java.util.Scanner;
+
 abstract class Monstre extends Personnage {
 
     private int gainExp;
@@ -12,7 +14,7 @@ abstract class Monstre extends Personnage {
     public void attaquer(Personnage cible){
         int degat = this.getForce();
         System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName()+".");
-        cible.recevoirDegats(this, degat);
+        cible.recevoirDegats(degat);
     }
 
     // TODO : Effectuer les gains d'item, d'exp et d'or du héro à la mort du monstre
@@ -40,9 +42,19 @@ abstract class Monstre extends Personnage {
 	public void donnerEcaille(Personnage attaquant) {
 	}
 
-	public void debuter(Hero hero){
-        System.out.println("Vous tombez face à " + this.getClass().getSimpleName());
+	public void combattre(Hero hero){
+        System.out.println(this.getClass().getSimpleName()+" vous agresse !");
+        Scanner sc = new Scanner(System.in);
+        while(hero.isEnVie() && this.isEnVie()){
+            System.out.println("Quelle arme utiliser ?");
+            for(int i = 0; i < hero.getArmes().length; i++) {
+                if(hero.getArmes(i) != null) {
+                    System.out.println(i + 1 + " - " + hero.getArmes(i).getClass().getSimpleName());
+                }
+            }
+            int arme = sc.nextInt();
+            hero.attaquer(this,hero.getArmes(arme - 1));
+        }
     }
-
 
 }

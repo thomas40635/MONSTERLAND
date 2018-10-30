@@ -21,6 +21,8 @@ public class Hero extends Personnage{
 	private int viande = 0;
 	private int os = 0;
 
+	private int or = 0;
+
 	public Hero() {
 		super(VIE_DFL, FORCE_DFL);
 		Poing poing = new Poing();
@@ -129,9 +131,13 @@ public class Hero extends Personnage{
 		this.ecaille += gainEcaille;
 	}
     
-    public void gagnerOs(int gainOs) {
-		this.os += gainOs;
-		
+    public void gagnerOs(int os) {
+		this.os += os;
+	}
+
+    public void gagnerOr(int or) {
+		this.or += or;
+		System.out.println("Vous avez gagné "+or+" pièces d'or");
 	}
     
     public void gagnerViande(int gainViande) {
@@ -139,6 +145,7 @@ public class Hero extends Personnage{
 	}
 
     public void parcourir(Lieu lieu){
+		System.out.println("Vous vous aventurez dans "+lieu.getNom());
 		lieu.parcourir(this);
 	}
 
@@ -148,6 +155,10 @@ public class Hero extends Personnage{
 
     public Arme[] getArmes() {
         return armes;
+    }
+
+    public Arme getArmes(int num) {
+        return armes[num];
     }
 
     public int getChance() {
@@ -221,6 +232,10 @@ public class Hero extends Personnage{
 		return esprit;
 	}
 
+	public int getOr() {
+		return or;
+	}
+
 	public void setEsprit(int esprit) {
 		this.esprit = esprit;
 	}
@@ -231,6 +246,10 @@ public class Hero extends Personnage{
 
 	public void setViande(int viande) {
 		this.viande = viande;
+	}
+
+	public void setOr(int or) {
+		this.or = or;
 	}
 
 	public int getOs() {
