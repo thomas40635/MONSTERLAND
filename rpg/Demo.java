@@ -5,12 +5,21 @@ public class Demo {
 
 		Hero hero = new Hero();
 		Dragon dragon = new Dragon();
-		Dragon dragon2 = new Dragon();
-		Dragon dragon3 = new Dragon();
-		BouleDeFeu sort = new BouleDeFeu();
+		Epee epee = new Epee();
+		
+		System.out.println(hero.getEcaille());
+		while (dragon.isEnVie()) {
+			hero.attaquer(dragon, epee);
+		}
+		System.out.println(hero.getEcaille());
+		System.out.println(hero.getOs());
+		System.out.println(hero.getViande());
+//		Dragon dragon2 = new Dragon();
+//		Dragon dragon3 = new Dragon();
+//		BouleDeFeu sort = new BouleDeFeu();
 
-		hero.equiper(sort);
+//		hero.equiper(sort);
 
-		hero.attaquer(dragon,sort);
+//		hero.attaquer(dragon,sort);
 	}
 }

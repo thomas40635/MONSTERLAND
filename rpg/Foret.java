@@ -26,7 +26,7 @@ public class Foret extends Lieu{
             System.out.println("Vous tombez face à " + etape.getClass().getSimpleName());
         }
         else if(etape instanceof Marchand){
-            System.out.println("Vous rencontrer un marchand");
+            System.out.println("Vous rencontrez un marchand");
         }
         else if(etape instanceof Druide){
             System.out.println("Vous croisez un druide");

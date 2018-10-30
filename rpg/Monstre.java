@@ -21,8 +21,24 @@ abstract class Monstre extends Personnage {
         super.mourir(attaquant);
         if(attaquant instanceof Hero) {
             ((Hero) attaquant).gagnerExp(this.gainExp);
+            // TODO : tous les monstres a leur mort ne donne pas tous les differents item
+            this.donnerEcaille(attaquant);
+            this.donnerViande(attaquant);
+            this.donnerOs(attaquant);
         }
     }
+    
+  //Methodes qui seront réécrites dans les classes Filles (Dragon ...)
+    public void donnerOs(Personnage attaquant) {
+		
+	}
+
+	public void donnerViande(Personnage attaquant) {
+		
+	}
+
+	public void donnerEcaille(Personnage attaquant) {
+	}
 
 
 }

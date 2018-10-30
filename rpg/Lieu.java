@@ -1,8 +1,6 @@
 package rpg;
 
-import java.util.ArrayList;
-
-public class Lieu {
+abstract class Lieu{
 
 	public Lieu() {
 

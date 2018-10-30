@@ -15,6 +15,11 @@ public class Hero extends Personnage{
 
 	private int chance = 5;
 	private int experience = 0;
+	//Item
+	private int ecaille = 0;
+	private int esprit = 0;
+	private int viande = 0;
+	private int os = 0;
 
 	public Hero() {
 		super(VIE_DFL, FORCE_DFL);
@@ -55,7 +60,7 @@ public class Hero extends Personnage{
 			}
 
 			if(attaqueReussie) {
-				System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName() + " avec " + 				arme.getClass().getSimpleName() + ".");
+				System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName() + " avec " + arme.getClass().getSimpleName() + ".");
 				cible.recevoirDegats(this, degat, typeDegat);
 				if(cible.isEnVie()) {
 					cible.attaquer(this);
@@ -118,6 +123,21 @@ public class Hero extends Personnage{
         this.setVieMax(this.getVieMax() + 2);
         this.setVie(this.getVie() + 2);
     }
+    
+    //Gain des ecaille du monstre quand le hero le tue
+    public void gagnerEcaille(int gainEcaille) {
+		this.ecaille += gainEcaille;
+	}
+    
+    public void gagnerOs(int gainOs) {
+		this.os += gainOs;
+		
+	}
+    
+    public void gagnerViande(int gainViande) {
+		this.viande += gainViande;
+		
+	}
 
     public void parcourir(Lieu lieu){
 		lieu.parcourir(this);
@@ -189,6 +209,42 @@ public class Hero extends Personnage{
 	public void setExperience(int experience) {
 		this.experience = experience;
 	}
+	
+	public int getEcaille() {
+		return ecaille;
+	}
+
+	public void setEcaille(int ecaille) {
+		this.ecaille = ecaille;
+	}
+
+	public int getEsprit() {
+		return esprit;
+	}
+
+	public void setEsprit(int esprit) {
+		this.esprit = esprit;
+	}
+
+	public int getViande() {
+		return viande;
+	}
+
+	public void setViande(int viande) {
+		this.viande = viande;
+	}
+
+	public int getOs() {
+		return os;
+	}
+
+	public void setOs(int os) {
+		this.os = os;
+	}
+
+	public void setMana(int mana) {
+		this.mana = mana;
+	}
 
 	@Override
 	public String toString() {
@@ -196,4 +252,8 @@ public class Hero extends Personnage{
 				"armes=" + Arrays.toString(armes) +
 				'}';
 	}
+
+	
+
+	
 }

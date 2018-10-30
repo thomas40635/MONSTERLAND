@@ -2,18 +2,18 @@ package rpg;
 
 public class Monde {
 
-	private static Hero hero = new Hero();
-	private static Foret foret = new Foret();
+	private Hero hero = new Hero();
+	private Foret foret = new Foret();
 
 	public Monde() {
 
 	}
 
-	public static Hero getHero() {
+	public Hero getHero() {
 		return hero;
 	}
 
-	public static Foret getForet() {
+	public Foret getForet() {
 		return foret;
 	}
 }
