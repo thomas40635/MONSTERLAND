@@ -19,6 +19,7 @@ public class Manager {
 		hero.equiper(dague);
 
 		hero.parcourir(foret);
+		hero.parcourir(foret);
 
 	}
 

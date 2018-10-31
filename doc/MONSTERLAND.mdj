@@ -3075,7 +3075,7 @@
 											"top": 727,
 											"width": 158,
 											"height": 13,
-											"text": "Poussiere"
+											"text": "Esprit"
 										},
 										{
 											"_type": "LabelView",
@@ -3162,7 +3162,7 @@
 											"top": 760,
 											"width": 158,
 											"height": 13,
-											"text": "+donnePoussiere()",
+											"text": "+donneEsprit()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -10811,7 +10811,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Poussiere",
+					"name": "Esprit",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -10849,7 +10849,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFmi5lQsVCwwno="
 							},
-							"name": "donnePoussiere"
+							"name": "donneEsprit"
 						}
 					]
 				},
@@ -11174,7 +11174,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFmp+17yLfiQGE="
 							},
-							"name": "nom"
+							"name": "nom",
+							"type": ""
 						}
 					]
 				},

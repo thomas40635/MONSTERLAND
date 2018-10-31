@@ -11,10 +11,10 @@ public class Foret extends Lieu{
     public Foret() {
         super(NOM);
         etapes.add(new Dragon());
-        etapes.add(new Marchand());
-        etapes.add(new Dragon());
-        etapes.add(new Dragon());
         etapes.add(new Druide());
+        etapes.add(new Dragon());
+        etapes.add(new Dragon());
+        etapes.add(new Marchand());
         etapes.add(new Dragon());
     }
 
