@@ -16,12 +16,12 @@ public class Hero extends Personnage{
 	private int chance = 5;
 	private int experience = 0;
 	//Item
-	private int ecaille = 0;
-	private int esprit = 0;
-	private int viande = 0;
-	private int os = 0;
+	private int ecaille = 10;
+	private int esprit = 10;
+	private int poil = 10;
+	private int os = 10;
 
-	private int or = 0;
+	private int or = 10;
 
 	public Hero() {
 		super(VIE_DFL, FORCE_DFL);
@@ -125,6 +125,16 @@ public class Hero extends Personnage{
         this.setVieMax(this.getVieMax() + 2);
         this.setVie(this.getVie() + 2);
     }
+
+    public void soigner(int soin){
+		this.setVie(this.getVie() + soin);
+		System.out.println("Vous regagnez " + soin + " point(s) de vie");
+	}
+
+    public void rendreMana(int mana){
+		this.setMana(this.getMana() + mana);
+		System.out.println("Vous regagnez " + mana + " point(s) de mana");
+	}
     
     //Gain des ecaille du monstre quand le hero le tue
     public void gagnerEcaille(int gainEcaille) {
@@ -140,13 +150,18 @@ public class Hero extends Personnage{
 		System.out.println("Vous avez gagné "+or+" pièces d'or");
 	}
     
-    public void gagnerViande(int gainViande) {
-		this.viande += gainViande;
+    public void gagnerPoil(int gainPoil) {
+		this.poil += gainPoil;
 	}
 
-    public void parcourir(Lieu lieu){
+    public void entrer(Lieu lieu){
 		System.out.println("Vous vous aventurez dans "+lieu.getNom());
-		lieu.parcourir(this);
+		lieu.entrer();
+	}
+
+    public void avancer(Lieu lieu){
+		System.out.println("Vous avancez dans "+lieu.getNom());
+		lieu.avancer(this);
 	}
 
     public int getNbArme() {
@@ -228,6 +243,10 @@ public class Hero extends Personnage{
 		this.ecaille = ecaille;
 	}
 
+	public void setPoil(int poil) {
+		this.poil = poil;
+	}
+
 	public int getEsprit() {
 		return esprit;
 	}
@@ -240,12 +259,8 @@ public class Hero extends Personnage{
 		this.esprit = esprit;
 	}
 
-	public int getViande() {
-		return viande;
-	}
-
-	public void setViande(int viande) {
-		this.viande = viande;
+	public int getPoil() {
+		return poil;
 	}
 
 	public void setOr(int or) {
@@ -276,7 +291,7 @@ public class Hero extends Personnage{
 				", experience=" + experience +
 				", ecaille=" + ecaille +
 				", esprit=" + esprit +
-				", viande=" + viande +
+				", poil=" + poil +
 				", os=" + os +
 				'}';
 	}

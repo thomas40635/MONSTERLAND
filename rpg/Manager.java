@@ -18,8 +18,8 @@ public class Manager {
 		hero.equiper(bouledefeu);
 		hero.equiper(dague);
 
-		hero.parcourir(foret);
-		hero.parcourir(foret);
+		hero.entrer(foret);
+		hero.avancer(foret);
 
 	}
 

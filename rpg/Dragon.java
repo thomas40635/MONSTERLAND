@@ -39,11 +39,6 @@ public class Dragon extends Neutre implements Ecaille, Viande, Os{
 	public void donnerOs(Personnage attaquant) {
 		((Hero) attaquant).gagnerOs(this.gainOs);
 	}
-
-	@Override
-	public void donnerViande(Personnage attaquant) {
-		((Hero) attaquant).gagnerViande(this.gainViande);
-	}
     
     public static int getVieDfl() {
         return VIE_DFL;

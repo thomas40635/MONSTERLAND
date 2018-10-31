@@ -6,7 +6,11 @@ abstract class Lieu{
 		this.nom = nom;
 	}
 
-	public void parcourir(Hero hero){
+	public void entrer(){
+
+	}
+
+	public void avancer(Hero hero){
 
 	}
 

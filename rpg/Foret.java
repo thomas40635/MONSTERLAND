@@ -10,8 +10,8 @@ public class Foret extends Lieu{
 
     public Foret() {
         super(NOM);
-        etapes.add(new Dragon());
         etapes.add(new Druide());
+        etapes.add(new Dragon());
         etapes.add(new Dragon());
         etapes.add(new Dragon());
         etapes.add(new Marchand());
@@ -19,7 +19,12 @@ public class Foret extends Lieu{
     }
 
     @Override
-    public void parcourir(Hero hero){
+    public void entrer(){
+        this.etapeActuelle = 0;
+    }
+
+    @Override
+    public void avancer(Hero hero){
         etapeActuelle++;
         Object etape = this.getEtapes().get(etapeActuelle - 1);
         if(etape instanceof Monstre) {

@@ -41,7 +41,7 @@ abstract class Personnage {
 
     public void mourir(){
         System.out.println("Votre héro est mort !");
-        System.out.println("___--- GAME OVER ---___");
+        System.out.println("__== GAME OVER ==__");
         this.setEnVie(false);
     }
 

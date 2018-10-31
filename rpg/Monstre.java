@@ -49,7 +49,7 @@ abstract class Monstre extends Personnage {
             System.out.println("Quelle arme utiliser ?");
             for(int i = 0; i < hero.getArmes().length; i++) {
                 if(hero.getArmes(i) != null) {
-                    System.out.println(i + 1 + " - " + hero.getArmes(i).getClass().getSimpleName());
+                    System.out.println(i + 1 + " - " + hero.getArmes(i).getClass().getSimpleName() + " (" +hero.getArmes(i).getDegat() + "degat)");
                 }
             }
             int arme = sc.nextInt();
