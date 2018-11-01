@@ -98,7 +98,7 @@ public class Hero extends Personnage{
 			System.out.println("Vous ne pouvez pas vous équiper de "+arme.getClass().getSimpleName() + " car vous avez trop d'armes ");
 		}
 	}
-	// TODO : Vérifiez si l'arme désequiper est bien équipé
+
 	public void desequiper(Arme arme){
 		for(int i = 0; i < this.nbArme; ++i){
 			if(this.armes[i].equals(arme)){
@@ -169,21 +169,17 @@ public class Hero extends Personnage{
 		lieu.avancer(this);
 	}
 
-    public int getNbArme() {
-        return nbArme;
-    }
-
-    public Arme[] getArmes() {
-        return armes;
-    }
-
     public Arme getArmes(int num) {
         return armes[num];
     }
 
-    public int getChance() {
-        return chance;
-    }
+
+	@Override
+	public void setVie(int vie) {
+		if(this.vieMax >= vie){
+			super.setVie(vie);
+		}
+	}
 
 	public static int getVieDfl() {
 		return VIE_DFL;
@@ -197,27 +193,56 @@ public class Hero extends Personnage{
 		return vieMax;
 	}
 
+	public int getMana() {
+		return mana;
+	}
+
 	public int getNiveau() {
 		return niveau;
 	}
 
-	public int getMana() {
-		return mana;
+	public int getNbArme() {
+		return nbArme;
+	}
+
+	public Arme[] getArmes() {
+		return armes;
+	}
+
+	public int getChance() {
+		return chance;
 	}
 
 	public int getExperience() {
 		return experience;
 	}
 
-	@Override
-	public void setVie(int vie) {
-		if(this.vieMax >= vie){
-			super.setVie(vie);
-		}
+	public int getEcaille() {
+		return ecaille;
+	}
+
+	public int getEsprit() {
+		return esprit;
+	}
+
+	public int getPoil() {
+		return poil;
+	}
+
+	public int getOs() {
+		return os;
+	}
+
+	public int getOr() {
+		return or;
 	}
 
 	public void setVieMax(int vieMax) {
 		this.vieMax = vieMax;
+	}
+
+	public void setMana(int mana) {
+		this.mana = mana;
 	}
 
 	public void setNiveau(int niveau) {
@@ -239,65 +264,24 @@ public class Hero extends Personnage{
 	public void setExperience(int experience) {
 		this.experience = experience;
 	}
-	
-	public int getEcaille() {
-		return ecaille;
-	}
 
 	public void setEcaille(int ecaille) {
 		this.ecaille = ecaille;
-	}
-
-	public void setPoil(int poil) {
-		this.poil = poil;
-	}
-
-	public int getEsprit() {
-		return esprit;
-	}
-
-	public int getOr() {
-		return or;
 	}
 
 	public void setEsprit(int esprit) {
 		this.esprit = esprit;
 	}
 
-	public int getPoil() {
-		return poil;
-	}
-
-	public void setOr(int or) {
-		this.or = or;
-	}
-
-	public int getOs() {
-		return os;
+	public void setPoil(int poil) {
+		this.poil = poil;
 	}
 
 	public void setOs(int os) {
 		this.os = os;
 	}
 
-	public void setMana(int mana) {
-		this.mana = mana;
-	}
-
-	@Override
-	public String toString() {
-		return "Hero{" +
-				"vieMax=" + vieMax +
-				", mana=" + mana +
-				", niveau=" + niveau +
-				", nbArme=" + nbArme +
-				", armes=" + Arrays.toString(armes) +
-				", chance=" + chance +
-				", experience=" + experience +
-				", ecaille=" + ecaille +
-				", esprit=" + esprit +
-				", poil=" + poil +
-				", os=" + os +
-				'}';
+	public void setOr(int or) {
+		this.or = or;
 	}
 }

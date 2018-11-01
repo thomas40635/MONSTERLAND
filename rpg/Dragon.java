@@ -1,7 +1,10 @@
 package rpg;
 
-public class Dragon extends Neutre implements Ecaille, Viande, Os{
-    private static final int VIE_DFL = 18;
+public class Dragon extends Bosse implements Ecaille, Poil, Os{
+
+    private static final String NOM = "Dragon";
+
+    private static final int VIE_DFL = 16;
     private static final int FORCE_DFL = 4;
     private static final int NIVEAU_DFL = 5;
     private static final int GAINEXP_DFL = 5;
@@ -10,7 +13,7 @@ public class Dragon extends Neutre implements Ecaille, Viande, Os{
     private int gainViande = 2;
 
     public Dragon() {
-        super(VIE_DFL, FORCE_DFL, GAINEXP_DFL);
+        super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
     }
 
     @Override
@@ -72,7 +75,7 @@ public class Dragon extends Neutre implements Ecaille, Viande, Os{
 		this.gainOs = gainOs;
 	}
 
-	public int getGainViande() {
+	public int getGainPoil() {
 		return gainViande;
 	}
 

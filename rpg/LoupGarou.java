@@ -1,0 +1,36 @@
+package rpg;
+
+public class LoupGarou extends Bosse implements Poil, Os{
+
+    private static final String NOM = "Loup-garou";
+
+    private static final int VIE_DFL = 18;
+    private static final int FORCE_DFL = 4;
+    private static final int NIVEAU_DFL = 5;
+    private static final int GAINEXP_DFL = 5;
+    private int gainOs = 2;
+    private int gainPoil = 2;
+
+    public LoupGarou() {
+        super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
+    }
+
+    @Override
+    public String toString() {
+        return "Dragon [getVie()=" + getVie() + ", getForce()=" + getForce()
+                + ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
+                + ", hashCode()=" + hashCode() + ", toString()="
+                + super.toString() + "]";
+    }
+
+    @Override
+    public void donnerPoil(Personnage attaquant){
+        ((Hero) attaquant).gagnerPoil(this.gainPoil);
+    }
+
+    @Override
+    public void donnerOs(Personnage attaquant) {
+        ((Hero) attaquant).gagnerOs(this.gainOs);
+    }
+
+}

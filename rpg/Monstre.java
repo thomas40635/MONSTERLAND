@@ -4,16 +4,19 @@ import java.util.Scanner;
 
 abstract class Monstre extends Personnage {
 
+    private String nom;
     private int gainExp;
 
-    public Monstre(int vie, int force, int gainExp) {
+
+    public Monstre(String nom, int vie, int force, int gainExp) {
         super(vie, force);
+        this.nom = nom;
         this.gainExp = gainExp;
     }
 
     public void attaquer(Personnage cible){
         int degat = this.getForce();
-        System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName()+".");
+        System.out.println(this.nom + " attaque " + cible.getClass().getSimpleName()+".");
         cible.recevoirDegats(degat);
     }
 
@@ -25,7 +28,7 @@ abstract class Monstre extends Personnage {
             ((Hero) attaquant).gagnerExp(this.gainExp);
             // TODO : tous les monstres a leur mort ne donne pas tous les differents item
             this.donnerEcaille((Hero) attaquant);
-            this.donnerViande((Hero) attaquant);
+            this.donnerPoil((Hero) attaquant);
             this.donnerOs((Hero) attaquant);
         }
     }
@@ -35,7 +38,7 @@ abstract class Monstre extends Personnage {
 		
 	}
 
-	public void donnerViande(Personnage attaquant) {
+	public void donnerPoil(Personnage attaquant) {
 		
 	}
 
@@ -43,7 +46,7 @@ abstract class Monstre extends Personnage {
 	}
 
 	public void combattre(Hero hero){
-        System.out.println(this.getClass().getSimpleName()+" vous agresse !");
+        System.out.println(this.nom + " vous agresse !");
         Scanner sc = new Scanner(System.in);
         while(hero.isEnVie() && this.isEnVie()){
             System.out.println("Quelle arme utiliser ?");
