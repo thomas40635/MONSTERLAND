@@ -127,8 +127,13 @@ public class Hero extends Personnage{
     }
 
     public void soigner(int soin){
-		this.setVie(this.getVie() + soin);
-		System.out.println("Vous regagnez " + soin + " point(s) de vie");
+		if(this.getVie() + mana > this.vieMax){
+			this.setVie(this.vieMax);
+		}
+		else {
+			this.setVie(this.getVie() + soin);
+			System.out.println("Vous regagnez " + soin + " point(s) de vie");
+		}
 	}
 
     public void rendreMana(int mana){
