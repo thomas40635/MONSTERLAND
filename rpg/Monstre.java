@@ -30,6 +30,7 @@ abstract class Monstre extends Personnage {
             this.donnerEcaille((Hero) attaquant);
             this.donnerPoil((Hero) attaquant);
             this.donnerOs((Hero) attaquant);
+            this.donnerEsprit((Hero) attaquant);
         }
     }
     
@@ -58,9 +59,38 @@ abstract class Monstre extends Personnage {
                     System.out.println(i + 1 + " - " + hero.getArmes(i).getClass().getSimpleName() + " (" +hero.getArmes(i).getDegat() + "degat)");
                 }
             }
-            int arme = sc.nextInt();
-            hero.attaquer(this,hero.getArmes(arme - 1));
+            String armeChoisie = sc.nextLine();
+			try { 
+				int arme = Integer.parseInt(armeChoisie); 
+				if (arme > hero.getNbArme()){
+					System.out.println("Saisie incorrecte, veuillez recommencer");
+					this.combattre(hero);
+				}
+				hero.attaquer(this,hero.getArmes(arme - 1));
+			} 
+			catch (Exception e) { 
+				System.out.println("Saisie incorrecte, veuillez recommencer");
+				this.combattre(hero);
+			}
         }
     }
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getGainExp() {
+		return gainExp;
+	}
+
+	public void setGainExp(int gainExp) {
+		this.gainExp = gainExp;
+	}
+	
+	
 
 }

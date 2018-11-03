@@ -1,6 +1,7 @@
 package rpg;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Hero extends Personnage{
 
@@ -48,6 +49,7 @@ public class Hero extends Personnage{
 				}
 				else{
 					System.out.println("Vous ne pouvez pas attaquer avec une arme cassée...");
+					this.desequiper(arme);
 				}
 			}
 			else if (arme instanceof Magique){
@@ -62,7 +64,7 @@ public class Hero extends Personnage{
 			}
 
 			if(attaqueReussie) {
-				System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getClass().getSimpleName() + " avec " + arme.getClass().getSimpleName() + ".");
+				System.out.println(this.getClass().getSimpleName() + " attaque " + cible.getNom() + " avec " + arme.getClass().getSimpleName() + ".");
 				cible.recevoirDegats(this, degat, typeDegat);
 				if(cible.isEnVie()) {
 					cible.attaquer(this);
@@ -159,7 +161,7 @@ public class Hero extends Personnage{
     
     public void gagnerPoil(int poil) {
 		this.poil += poil;
-		System.out.println("Vous avez gagné "+or+" poil(s) de monstre");
+		System.out.println("Vous avez gagné "+poil+" poil(s) de monstre");
 	}
 
     public void gagnerEsprit(int esprit) {

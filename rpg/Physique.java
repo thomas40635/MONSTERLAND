@@ -10,9 +10,7 @@ abstract class Physique extends Arme{
         this.durabilite = durabilite;
     }
 
-	// TODO : public void?
 	//Fonction qui enleve de la durabilité à l'arme
-
 	public void user(){
     	if(this.durabilite > 0) {
 			this.durabilite -= 1;

@@ -32,13 +32,16 @@ abstract class Lieu{
 		else if(etape instanceof Quête){
 			((Quête) etape).debuter(hero);
 		}
+		else if(etape instanceof Tresor){
+			((Tresor) etape).recuperer(hero);
+		}
 		if(hero.isEnVie()){
 			if(this.etapeActuelle < this.etapes.size()){
 				System.out.println("Vous continuez d'avancer.");
 				this.avancer(hero);
 			}
 			else{
-				System.out.println("GAME OVER");
+				System.out.println("VOUS AVEZ FINI LA MAP " + this.nom);
 			}
 		}
 		else{

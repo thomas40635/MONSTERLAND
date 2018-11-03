@@ -10,11 +10,10 @@ public class Marchand {
 	}
 
 	public void acheter(Hero hero){
-		System.out.println(hero.getArmes());
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Quelle arme voules-vous acheter ?" + "\n" +
-		"1 - Dague : 5 or" + "\n" +
-		"2 - Epee : 8 or" + "\n" +
+		"1 - Epee : 8 or" + "\n" +
+		"2 - Dague : 5 or" + "\n" +
 		"3 - Eclair : 2 or " + "\n" +
 		"4 - Boule De Feu : 12 or" + "\n" +
 		"5 - Partir");

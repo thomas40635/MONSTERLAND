@@ -17,6 +17,7 @@ public class Foret extends Lieu{
         etapes.add(new Ogre());
         etapes.add(new Druide());
         etapes.add(new LoupGarou());
+        etapes.add(new Tresor());
         this.setEtapes(etapes);
     }
 

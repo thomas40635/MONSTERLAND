@@ -2,7 +2,7 @@ package rpg;
 
 public class Ogre extends Ordinaire implements Poil, Os{
 
-    private static final String NOM = "Gobelin";
+    private static final String NOM = "Ogre";
 
     private static final int VIE_DFL = 8;
     private static final int FORCE_DFL = 2;

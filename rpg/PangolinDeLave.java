@@ -2,7 +2,7 @@ package rpg;
 
 public class PangolinDeLave extends Ordinaire implements Ecaille, Os{
 
-    private static final String NOM = "PythonDeFeu";
+    private static final String NOM = "Pangolin de lave";
 
     private static final int VIE_DFL = 10;
     private static final int FORCE_DFL = 4;

@@ -17,6 +17,7 @@ public class MaisonHantee extends Lieu{
         etapes.add(new Zombie());
         etapes.add(new Druide());
         etapes.add(new Vampire());
+        etapes.add(new Tresor());
         this.setEtapes(etapes);
     }
 

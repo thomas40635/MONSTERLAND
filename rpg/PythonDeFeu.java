@@ -2,7 +2,7 @@ package rpg;
 
 public class PythonDeFeu extends Ordinaire implements Ecaille{
 
-    private static final String NOM = "PythonDeFeu";
+    private static final String NOM = "Python De Feu";
 
     private static final int VIE_DFL = 7;
     private static final int FORCE_DFL = 3;

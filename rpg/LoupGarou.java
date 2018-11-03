@@ -2,7 +2,7 @@ package rpg;
 
 public class LoupGarou extends Bosse implements Poil, Os{
 
-    private static final String NOM = "Loup-garou";
+    private static final String NOM = "Loup garou";
 
     private static final int VIE_DFL = 8;
     private static final int FORCE_DFL = 4;

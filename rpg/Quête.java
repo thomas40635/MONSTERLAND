@@ -35,8 +35,12 @@ public class Quête {
                 hero.recevoirDegats(4);
             }
         }
+        else if(str.equals("non")){
+        	System.out.println("Vous continuez votre chemin");
+        }
         else{
-            System.out.println("Vous continuez votre chemin");
+        	System.out.println("Veuillez taper oui ou non");
+        	this.debuter(hero);
         }
     }
 }

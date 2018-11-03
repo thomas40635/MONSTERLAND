@@ -17,6 +17,7 @@ public class Volcan extends Lieu{
         etapes.add(new PangolinDeLave());
         etapes.add(new Druide());
         etapes.add(new Dragon());
+        etapes.add(new Tresor());
         this.setEtapes(etapes);
     }
 
