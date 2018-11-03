@@ -4,6 +4,8 @@ public class Monde {
 
 	private Hero hero = new Hero();
 	private Foret foret = new Foret();
+	private MaisonHantee maisonHantee = new MaisonHantee();
+	private Volcan volcan = new Volcan();
 
 	public Monde() {
 
@@ -15,5 +17,13 @@ public class Monde {
 
 	public Foret getForet() {
 		return foret;
+	}
+
+	public MaisonHantee getMaisonHantee() {
+		return maisonHantee;
+	}
+
+	public Volcan getVolcan() {
+		return volcan;
 	}
 }

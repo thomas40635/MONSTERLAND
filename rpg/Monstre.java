@@ -45,6 +45,9 @@ abstract class Monstre extends Personnage {
 	public void donnerEcaille(Personnage attaquant) {
 	}
 
+	public void donnerEsprit(Personnage attaquant) {
+	}
+
 	public void combattre(Hero hero){
         System.out.println(this.nom + " vous agresse !");
         Scanner sc = new Scanner(System.in);

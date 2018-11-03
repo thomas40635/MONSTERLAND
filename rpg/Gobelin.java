@@ -1,17 +1,17 @@
 package rpg;
 
-public class LoupGarou extends Bosse implements Poil, Os{
+public class Gobelin extends Ordinaire implements Poil, Os{
 
-    private static final String NOM = "Loup-garou";
+    private static final String NOM = "Gobelin";
 
-    private static final int VIE_DFL = 8;
-    private static final int FORCE_DFL = 4;
-    private static final int NIVEAU_DFL = 3;
+    private static final int VIE_DFL = 6;
+    private static final int FORCE_DFL = 1;
+    private static final int NIVEAU_DFL = 5;
     private static final int GAINEXP_DFL = 5;
-    private int gainOs = 2;
-    private int gainPoil = 2;
+    private int gainOs = 1;
+    private int gainPoil = 1;
 
-    public LoupGarou() {
+    public Gobelin() {
         super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
     }
 

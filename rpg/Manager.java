@@ -10,16 +10,12 @@ public class Manager {
 		Monde monde = new Monde();
 		Hero hero = monde.getHero();
 		Foret foret = monde.getForet();
+		MaisonHantee maisonHantee  = monde.getMaisonHantee();
+		Volcan volcan  = monde.getVolcan();
 
-		Epee epee = new Epee();
-		BouleDeFeu bouledefeu = new BouleDeFeu();
-		Dague dague = new Dague();
-		hero.equiper(epee);
-		hero.equiper(bouledefeu);
-		hero.equiper(dague);
-
-		hero.entrer(foret);
 		hero.avancer(foret);
+		hero.avancer(maisonHantee);
+		hero.avancer(volcan);
 
 	}
 

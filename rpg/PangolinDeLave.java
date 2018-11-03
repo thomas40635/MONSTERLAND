@@ -1,35 +1,34 @@
 package rpg;
 
-public class LoupGarou extends Bosse implements Poil, Os{
+public class PangolinDeLave extends Ordinaire implements Ecaille, Os{
 
-    private static final String NOM = "Loup-garou";
+    private static final String NOM = "PythonDeFeu";
 
-    private static final int VIE_DFL = 8;
+    private static final int VIE_DFL = 10;
     private static final int FORCE_DFL = 4;
     private static final int NIVEAU_DFL = 3;
     private static final int GAINEXP_DFL = 5;
+    private int gainEcaille = 2;
     private int gainOs = 2;
-    private int gainPoil = 2;
 
-    public LoupGarou() {
+    public PangolinDeLave() {
         super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
     }
 
     @Override
     public String toString() {
-        return "Dragon [getVie()=" + getVie() + ", getForce()=" + getForce()
+        return  this.NOM + "[getVie()=" + getVie() + ", getForce()=" + getForce()
                 + ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
                 + ", hashCode()=" + hashCode() + ", toString()="
                 + super.toString() + "]";
     }
 
     @Override
-    public void donnerPoil(Personnage attaquant){
-        ((Hero) attaquant).gagnerPoil(this.gainPoil);
+    public void donnerEcaille(Personnage attaquant){
+        ((Hero) attaquant).gagnerEcaille(this.gainEcaille);
     }
-
     @Override
-    public void donnerOs(Personnage attaquant) {
+    public void donnerOs(Personnage attaquant){
         ((Hero) attaquant).gagnerOs(this.gainOs);
     }
 

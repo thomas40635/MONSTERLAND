@@ -31,13 +31,13 @@ public class Marchand {
 			this.acheter(hero);
 			break;
 		case "3":
-			BouleDeFeu bouleDeFeu = new BouleDeFeu();
-			hero.equiper(bouleDeFeu);
+			Eclair eclair = new Eclair();
+			hero.equiper(eclair);
 			this.acheter(hero);
 			break;
 		case "4":
-			Eclair eclair = new Eclair();
-			hero.equiper(eclair);
+			BouleDeFeu bouleDeFeu = new BouleDeFeu();
+			hero.equiper(bouleDeFeu);
 			this.acheter(hero);
 			break;
 		case "5":

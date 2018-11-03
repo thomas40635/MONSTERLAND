@@ -142,21 +142,29 @@ public class Hero extends Personnage{
 	}
     
     //Gain des ecaille du monstre quand le hero le tue
-    public void gagnerEcaille(int gainEcaille) {
-		this.ecaille += gainEcaille;
+    public void gagnerEcaille(int ecaille) {
+		this.ecaille += ecaille;
+		System.out.println("Vous avez gagné "+ecaille+" ecaille(s)");
 	}
     
     public void gagnerOs(int os) {
 		this.os += os;
+		System.out.println("Vous avez gagné "+os+" os");
 	}
 
     public void gagnerOr(int or) {
 		this.or += or;
-		System.out.println("Vous avez gagné "+or+" pièces d'or");
+		System.out.println("Vous avez gagné "+or+" pièce(s) d'or");
 	}
     
-    public void gagnerPoil(int gainPoil) {
-		this.poil += gainPoil;
+    public void gagnerPoil(int poil) {
+		this.poil += poil;
+		System.out.println("Vous avez gagné "+or+" poil(s) de monstre");
+	}
+
+    public void gagnerEsprit(int esprit) {
+		this.esprit += esprit;
+		System.out.println("Vous avez gagné "+esprit+" esprit(s)");
 	}
 
     public void entrer(Lieu lieu){

@@ -38,7 +38,7 @@ abstract class Lieu{
 				this.avancer(hero);
 			}
 			else{
-				System.out.println("NON");
+				System.out.println("GAME OVER");
 			}
 		}
 		else{
