@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Le premier monstre rencontré dans le lieu "Volcan du chaos"
+ */
 public class PythonDeFeu extends Ordinaire implements Ecaille{
 
     private static final String NOM = "Python De Feu";
@@ -12,14 +15,6 @@ public class PythonDeFeu extends Ordinaire implements Ecaille{
 
     public PythonDeFeu() {
         super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
-    }
-
-    @Override
-    public String toString() {
-        return  this.NOM + "[getVie()=" + getVie() + ", getForce()=" + getForce()
-                + ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
-                + ", hashCode()=" + hashCode() + ", toString()="
-                + super.toString() + "]";
     }
 
     @Override

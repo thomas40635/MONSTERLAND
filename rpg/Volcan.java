@@ -2,6 +2,9 @@ package rpg;
 
 import java.util.ArrayList;
 
+/**
+ * Le second lieu que le héro parcours dans le monde
+ */
 public class Volcan extends Lieu{
     private static final String NOM = "Volcan du chaos";
     private int niveauMinRequis = 5;

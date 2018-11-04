@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Le second monstre rencontré dans le lieu "Maison hantée"
+ */
 public class Zombie extends Ordinaire implements Esprit, Os{
 
     private static final String NOM = "Zombie";
@@ -12,14 +15,6 @@ public class Zombie extends Ordinaire implements Esprit, Os{
 
     public Zombie() {
         super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
-    }
-
-    @Override
-    public String toString() {
-        return  this.NOM + "[getVie()=" + getVie() + ", getForce()=" + getForce()
-                + ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
-                + ", hashCode()=" + hashCode() + ", toString()="
-                + super.toString() + "]";
     }
 
     @Override

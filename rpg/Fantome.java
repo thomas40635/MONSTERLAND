@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Le premier monstre rencontré dans le lieu "Maison hantée"
+ */
 public class Fantome extends Ordinaire implements Esprit{
 
     private static final String NOM = "Fantôme";

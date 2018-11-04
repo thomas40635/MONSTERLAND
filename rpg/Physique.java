@@ -1,6 +1,8 @@
 package rpg;
 
-
+/**
+ * Catégorie d'armes de type physique (Epée, dague) qui s'use à chaque utilisation jusqu'à se casser
+ */
 abstract class Physique extends Arme{
 
 	private int durabilite;
@@ -11,7 +13,9 @@ abstract class Physique extends Arme{
         this.durabilite = durabilite;
     }
 
-	//Fonction qui enleve de la durabilité à l'arme
+	/**
+	 * Use l'arme à chaque utilisation en lui faisant perdre de la durabilité
+	 */
 	public void user(){
     	if(this.durabilite > 0) {
 			this.durabilite -= 1;
@@ -21,18 +25,8 @@ abstract class Physique extends Arme{
 		}
 	}
 
-	/**
-	 * @return the durabilite
-     */
 	public int getDurabilite() {
 		return durabilite;
-	}
-
-	/**
-	 * @param durabilite the durabilite to set
-	 */
-	public void setDurabilite(int durabilite) {
-		this.durabilite = durabilite;
 	}
 
 	public boolean isUtilisable() {

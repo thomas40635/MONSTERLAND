@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Une trés bonne armes physique
+ */
 public class Epee extends Physique{
 	private static final int DEGAT_DFL = 4;
 	private static final int DURABILITE_DFL = 8;

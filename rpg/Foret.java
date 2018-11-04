@@ -2,6 +2,9 @@ package rpg;
 
 import java.util.ArrayList;
 
+/**
+ * Le premier lieu que le héro parcours
+ */
 public class Foret extends Lieu{
     private static final String NOM = "Fôret mystérieuse";
     private int niveauMinRequis = 1;

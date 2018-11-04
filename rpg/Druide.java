@@ -2,16 +2,27 @@ package rpg;
 
 import java.util.Scanner;
 
+/**
+ * Le druide est un amoureux de la nature qui confectionne et vend des potions de tout genre
+ */
 public class Druide {
 	public Druide(){
 
 	}
 
+	/**
+	 * La rencontre entre un héro et un druide
+	 * @param hero Le héro qui rencontre le druide
+	 */
 	public void rencontrer(Hero hero){
 		System.out.println("Vous croisez un druide");
 		this.acheter(hero);
 	}
 
+	/**
+	 * Appellé quand le druide propose au héro de vendre ses potions
+	 * @param hero Le héro qui achète les potions
+	 */
 	public void acheter(Hero hero){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Quelle potion voulez-vous boire ? :" + "\n" +

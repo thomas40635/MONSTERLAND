@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Le gobelin est le premier monstre rencontré dans le lieu "Fôret mystérieuse"
+ */
 public class Gobelin extends Ordinaire implements Poil, Os{
 
     private static final String NOM = "Gobelin";
@@ -13,14 +16,6 @@ public class Gobelin extends Ordinaire implements Poil, Os{
 
     public Gobelin() {
         super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
-    }
-
-    @Override
-    public String toString() {
-        return "Dragon [getVie()=" + getVie() + ", getForce()=" + getForce()
-                + ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
-                + ", hashCode()=" + hashCode() + ", toString()="
-                + super.toString() + "]";
     }
 
     @Override

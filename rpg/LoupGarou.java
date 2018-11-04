@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Le loup-Garou est le bosse à vaincre dans le lieu "Fôret mystérieuse"
+ */
 public class LoupGarou extends Bosse implements Poil, Os{
 
     private static final String NOM = "Loup garou";
@@ -16,14 +19,6 @@ public class LoupGarou extends Bosse implements Poil, Os{
     }
 
     @Override
-    public String toString() {
-        return "Dragon [getVie()=" + getVie() + ", getForce()=" + getForce()
-                + ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
-                + ", hashCode()=" + hashCode() + ", toString()="
-                + super.toString() + "]";
-    }
-
-    @Override
     public void donnerPoil(Personnage attaquant){
         ((Hero) attaquant).gagnerPoil(this.gainPoil);
     }
@@ -32,5 +27,4 @@ public class LoupGarou extends Bosse implements Poil, Os{
     public void donnerOs(Personnage attaquant) {
         ((Hero) attaquant).gagnerOs(this.gainOs);
     }
-
 }

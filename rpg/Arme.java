@@ -2,6 +2,9 @@ package rpg;
 
 import java.util.Objects;
 
+/**
+ * L'arme que le héro porte sur lui pour se battre
+ */
 abstract class Arme{
 	private int degat;
 
@@ -25,9 +28,4 @@ abstract class Arme{
 	public int getDegat() {
 		return degat;
 	}
-
-	public void setDegat(int degat) {
-		this.degat = degat;
-	}
-
 }

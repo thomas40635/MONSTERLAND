@@ -1,8 +1,10 @@
 package rpg;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
+/**
+ * Le lieu dans lequel le héro va se retrouver confronter à une suite d'évènements
+ */
 abstract class Lieu{
 	private String nom;
 	private ArrayList<Object> etapes;
@@ -13,10 +15,18 @@ abstract class Lieu{
 		this.etapes = etapes;
 	}
 
+	/**
+	 * Indique que le héro vient de pénétrer le lieu
+	 * @param hero Personnage qui entre dans le lieu
+	 */
 	public void entrer(Hero hero){
 		this.avancer(hero);
 	}
 
+	/**
+	 * Fait avancer le héro dans le lieu et ainsi lui fait rencontrer un nouvel évènement
+	 * @param hero Personnage qui avance dans le lieu
+	 */
 	public void avancer(Hero hero){
 		this.etapeActuelle++;
 		Object etape = this.etapes.get(this.etapeActuelle - 1);

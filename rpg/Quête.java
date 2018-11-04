@@ -3,6 +3,9 @@ package rpg;
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+ * Une quête que le héro peut trouver et décider d'accomplir ou non
+ */
 public class Quête {
     public Quête(){
 

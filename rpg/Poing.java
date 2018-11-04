@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Arme de base du héro. Peu puissante, mais trés durable.
+ */
 public class Poing extends Physique{
 	private static final int DEGAT_DFL = 1;
 	private static int durabilite = 1000;

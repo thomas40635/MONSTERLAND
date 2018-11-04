@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Le dragon est le bosse du lieu "Volcan du chaos"
+ */
 public class Dragon extends Bosse implements Ecaille, Poil, Os{
 
     private static final String NOM = "Dragon";
@@ -14,14 +17,6 @@ public class Dragon extends Bosse implements Ecaille, Poil, Os{
     public Dragon() {
         super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
     }
-
-	@Override
-	public String toString() {
-		return "Dragon [getVie()=" + getVie() + ", getForce()=" + getForce()
-				+ ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
-	}
 
 	@Override
 	public void donnerEcaille(Personnage attaquant){

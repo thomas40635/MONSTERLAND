@@ -1,5 +1,8 @@
 package rpg;
 
+/**
+ * Le bosse à vaincre du lieu "Maison hantée"
+ */
 public class Vampire extends Bosse implements Poil, Os, Esprit{
 
     private static final String NOM = "Vampire";
@@ -14,14 +17,6 @@ public class Vampire extends Bosse implements Poil, Os, Esprit{
 
     public Vampire() {
         super(NOM, VIE_DFL, FORCE_DFL, GAINEXP_DFL);
-    }
-
-    @Override
-    public String toString() {
-        return  this.NOM + "[getVie()=" + getVie() + ", getForce()=" + getForce()
-                + ", isEnVie()=" + isEnVie() + ", getClass()=" + getClass()
-                + ", hashCode()=" + hashCode() + ", toString()="
-                + super.toString() + "]";
     }
 
     @Override
