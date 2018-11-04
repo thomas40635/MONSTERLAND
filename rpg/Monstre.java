@@ -59,19 +59,25 @@ abstract class Monstre extends Personnage {
                     System.out.println(i + 1 + " - " + hero.getArmes(i).getClass().getSimpleName() + " (" +hero.getArmes(i).getDegat() + "degat)");
                 }
             }
-            String armeChoisie = sc.nextLine();
-			try { 
-				int arme = Integer.parseInt(armeChoisie); 
-				if (arme > hero.getNbArme()){
-					System.out.println("Saisie incorrecte, veuillez recommencer");
-					this.combattre(hero);
-				}
-				hero.attaquer(this,hero.getArmes(arme - 1));
-			} 
-			catch (Exception e) { 
-				System.out.println("Saisie incorrecte, veuillez recommencer");
-				this.combattre(hero);
-			}
+            int arme = sc.nextInt();
+            if(arme <= hero.getNbArme()){
+            	hero.attaquer(this,hero.getArmes(arme - 1));
+            }
+            else{
+            	System.out.println("Saisie incorrecte, veuillez recommencer");
+            }
+//			try {
+//				int arme = Integer.parseInt(armeChoisie); 
+//				if (arme > hero.getNbArme()){
+//					System.out.println("Saisie incorrecte, veuillez recommencer");
+//					this.combattre(hero);
+//				}
+//				hero.attaquer(this,hero.getArmes(arme - 1));
+//			} 
+//			catch (Exception e) { 
+//				System.out.println("Saisie incorrecte, veuillez recommencer");
+//				this.combattre(hero);
+//			}
         }
     }
 
