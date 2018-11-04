@@ -7,15 +7,9 @@ public class Manager {
 	 */
 	public static void main(String[] args) {
 
-		Monde monde = new Monde();
-		Hero hero = monde.getHero();
-		Foret foret = monde.getForet();
-		MaisonHantee maisonHantee  = monde.getMaisonHantee();
-		Volcan volcan  = monde.getVolcan();
+		Jeu jeu = new Jeu();
 
-		hero.avancer(foret);
-		hero.avancer(maisonHantee);
-		hero.avancer(volcan);
+		jeu.commencer();
 
 	}
 

@@ -91,9 +91,18 @@ public class Hero extends Personnage{
 	public void equiper(Arme arme){
 		// Si le héro a encore de la place, l'équipe de l'arme
 		if(nbArme < this.armes.length) {
-			this.armes[this.nbArme] = arme;
-			this.nbArme++;
-			System.out.println("Vous vous équipez de " + arme.getClass().getSimpleName());
+			boolean succes = true;
+			for(int i = 0; i < this.nbArme; i++){
+				if(arme.equals(this.armes[i])){
+					System.out.println("Vous êtes déjà équipé de cette arme...");
+					succes = false;
+				}
+			}
+			if(succes){
+				this.armes[this.nbArme] = arme;
+				System.out.println("Vous vous équipez de " + arme.getClass().getSimpleName());
+				this.nbArme++;
+			}
 		}
 		// Sinon, ne l'équipe pas
 		else{
@@ -102,14 +111,28 @@ public class Hero extends Personnage{
 	}
 
 	public void desequiper(Arme arme){
-		for(int i = 0; i < this.nbArme; ++i){
-			if(this.armes[i].equals(arme)){
-				this.armes[i] = this.armes[this.nbArme];
-				this.nbArme -= 1;
-				System.out.println("Vous vous deséquipez de " + arme.getClass().getSimpleName());
-			}
-		}
+		
+		for(int i = 0; i < this.armes.length; i++){
+            if(this.armes[i].equals(arme)){
+                for(int j = i; j < this.armes.length - 1; j++){
+                	this.armes[j] = this.armes[j+1];
+                	
+                }
+                break;
+            }
+        }
+		this.nbArme -= 1;
+		
 	}
+	
+//	public void desequiper(Arme arme){
+//		for(int i = 0; i < this.nbArme; ++i){
+//			if(this.armes[i].equals(arme)){
+//				this.armes[i] = this.armes[this.nbArme];
+//				this.nbArme -= 1;
+//			}
+//		}
+//	}
 
 	public void gagnerExp(int experience){
 	    this.experience += experience;
@@ -171,7 +194,7 @@ public class Hero extends Personnage{
 
     public void entrer(Lieu lieu){
 		System.out.println("Vous vous aventurez dans "+lieu.getNom());
-		lieu.entrer();
+		lieu.entrer(this);
 	}
 
     public void avancer(Lieu lieu){

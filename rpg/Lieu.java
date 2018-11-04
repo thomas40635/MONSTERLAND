@@ -13,8 +13,8 @@ abstract class Lieu{
 		this.etapes = etapes;
 	}
 
-	public void entrer(){
-
+	public void entrer(Hero hero){
+		this.avancer(hero);
 	}
 
 	public void avancer(Hero hero){

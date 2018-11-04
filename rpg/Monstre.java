@@ -51,7 +51,6 @@ abstract class Monstre extends Personnage {
 
 	public void combattre(Hero hero){
         System.out.println(this.nom + " vous agresse !");
-        Scanner sc = new Scanner(System.in);
         while(hero.isEnVie() && this.isEnVie()){
             System.out.println("Quelle arme utiliser ?");
             for(int i = 0; i < hero.getArmes().length; i++) {
@@ -59,25 +58,21 @@ abstract class Monstre extends Personnage {
                     System.out.println(i + 1 + " - " + hero.getArmes(i).getClass().getSimpleName() + " (" +hero.getArmes(i).getDegat() + "degat)");
                 }
             }
-            int arme = sc.nextInt();
-            if(arme <= hero.getNbArme()){
-            	hero.attaquer(this,hero.getArmes(arme - 1));
+            Scanner sc = new Scanner(System.in);
+            String armeChoisie = sc.nextLine();
+            Scanner sc2 = new Scanner(armeChoisie);
+            if(sc2.hasNextInt()){
+            	int arme = Integer.parseInt(armeChoisie);
+            	if (arme <= hero.getNbArme()){
+            		hero.attaquer(this,hero.getArmes(arme - 1));
+            	}
+            	else{
+            		System.out.println("Veuillez entrer un des chiffres indiqués");
+            	}
             }
             else{
-            	System.out.println("Saisie incorrecte, veuillez recommencer");
+            	System.out.println("Veuillez entrer un des chiffres indiqués");
             }
-//			try {
-//				int arme = Integer.parseInt(armeChoisie); 
-//				if (arme > hero.getNbArme()){
-//					System.out.println("Saisie incorrecte, veuillez recommencer");
-//					this.combattre(hero);
-//				}
-//				hero.attaquer(this,hero.getArmes(arme - 1));
-//			} 
-//			catch (Exception e) { 
-//				System.out.println("Saisie incorrecte, veuillez recommencer");
-//				this.combattre(hero);
-//			}
         }
     }
 
