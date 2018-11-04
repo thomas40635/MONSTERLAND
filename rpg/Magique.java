@@ -1,5 +1,6 @@
 package rpg;
 
+
 abstract class Magique extends Arme{
 
 	private int mana;

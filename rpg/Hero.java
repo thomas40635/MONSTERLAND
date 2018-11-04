@@ -3,6 +3,7 @@ package rpg;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class Hero extends Personnage{
 
 	private static final int VIE_DFL = 20;

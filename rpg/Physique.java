@@ -1,5 +1,6 @@
 package rpg;
 
+
 abstract class Physique extends Arme{
 
 	private int durabilite;
